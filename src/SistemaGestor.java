@@ -9,26 +9,26 @@ public class SistemaGestor {
 
     public void addProduct(Producto producte) {
         if (productes.containsKey(producte.getNombre())) {
-            System.out.println("Error: El producte ja existeix.");
+            System.out.println("El producto ya existe");
         } else {
             productes.put(producte.getNombre(), producte);
-            System.out.println("Producte afegit: " + producte.getNombre());
+            System.out.println("¡Producto añadido! " + producte.getNombre());
         }
     }
 
     public void deleteProduct(String nom) {
         if (productes.containsKey(nom)) {
             productes.remove(nom);
-            System.out.println("Producte eliminat: " + nom);
+            System.out.println("Producto eliminado: " + nom);
         } else {
-            System.out.println("Producte no trobat: " + nom);
+            System.out.println("Producto no encontrado: " + nom);
         }
     }
 
     public void consultProduct(String nom) {
         if (productes.containsKey(nom)) {
-            Producto producte = productes.get(nom);
-            System.out.println(producte);
+            Producto producto = productes.get(nom);
+            System.out.println(producto);
         } else {
             System.out.println("Producte no trobat: " + nom);
         }
@@ -36,9 +36,9 @@ public class SistemaGestor {
 
     public void ProductList() {
         if (productes.isEmpty()) {
-            System.out.println("No hi ha productes en el sistema.");
+            System.out.println("No tenemos productos almacenados, una pena");
         } else {
-            System.out.println("Llista de productes:");
+            System.out.println("Lista completa de todos los productos");
             for (Producto producte : productes.values()) {
                 System.out.println(producte);
             }
@@ -49,9 +49,9 @@ public class SistemaGestor {
         if (productes.containsKey(nom)) {
             Producto producte = productes.get(nom);
             producte.cantidad = novaQuantitat;
-            System.out.println("Quantitat actualitzada per al producte: " + nom + " a " + novaQuantitat);
+            System.out.println("Cantidad actualizada por producto: " + nom + " a " + novaQuantitat);
         } else {
-            System.out.println("Producte no trobat per actualitzar: " + nom);
+            System.out.println("No hemos encontrado el producto que quieres actualizar: : " + nom);
         }
     }
 }
