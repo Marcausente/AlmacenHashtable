@@ -9,39 +9,39 @@ public class Main {
 
         while (continuar) {
             System.out.println("\n--- Menú ---");
-            System.out.println("1. Afegir producte");
-            System.out.println("2. Eliminar producte");
-            System.out.println("3. Consultar producte");
-            System.out.println("4. Llistar productes");
-            System.out.println("5. Actualitzar quantitat en estoc");
+            System.out.println("1. Añade un producto");
+            System.out.println("2. Elimina un producto");
+            System.out.println("3. Consulta un producto");
+            System.out.println("4. Lista de productos");
+            System.out.println("5. Actualiza las cantidades de stock");
             System.out.println("6. Sortir");
             System.out.print("Selecciona una opció: ");
-            int opcio = scanner.nextInt();
+            int menu = scanner.nextInt();
             scanner.nextLine();
 
-            switch (opcio) {
+            switch (menu) {
                 case 1:
-                    System.out.print("Nom del producte: ");
+                    System.out.print("Nombre producto: ");
                     String nom = scanner.nextLine();
-                    System.out.print("Preu del producte: ");
-                    int preu = scanner.nextInt();
-                    System.out.print("Quantitat en estoc: ");
-                    int quantitat = scanner.nextInt();
+                    System.out.print("Precio de producto: ");
+                    int precio = scanner.nextInt();
+                    System.out.print("Cantidad de producto: ");
+                    int cantidad = scanner.nextInt();
                     scanner.nextLine();
-                    Producto producte = new Producto(nom, preu, quantitat);
-                    sistema.addProduct(producte);
+                    Producto producto = new Producto(nom, precio, cantidad);
+                    sistema.addProduct(producto);
                     break;
 
                 case 2:
-                    System.out.print("Nom del producte a eliminar: ");
-                    String nomEliminar = scanner.nextLine();
-                    sistema.deleteProduct(nomEliminar);
+                    System.out.print("Nombre del producto a añadir: ");
+                    String nombreEliminar = scanner.nextLine();
+                    sistema.deleteProduct(nombreEliminar);
                     break;
 
                 case 3:
-                    System.out.print("Nom del producte a consultar: ");
-                    String nomConsultar = scanner.nextLine();
-                    sistema.consultProduct(nomConsultar);
+                    System.out.print("Nombre del producto a consultar: ");
+                    String nombreConsultar = scanner.nextLine();
+                    sistema.consultProduct(nombreConsultar);
                     break;
 
                 case 4:
@@ -49,11 +49,11 @@ public class Main {
                     break;
 
                 case 5:
-                    System.out.print("Nom del producte a actualitzar: ");
-                    String nomActualitzar = scanner.nextLine();
-                    System.out.print("Nova quantitat: ");
-                    int novaQuantitat = scanner.nextInt();
-                    sistema.updateProduct(nomActualitzar, novaQuantitat);
+                    System.out.print("Nombre del producto a actualizar: ");
+                    String nombreActualizar = scanner.nextLine();
+                    System.out.print("Nueva cuantidad: ");
+                    int nuevaCantidad = scanner.nextInt();
+                    sistema.updateProduct(nombreActualizar, nuevaCantidad);
                     break;
 
                 case 6:
@@ -62,7 +62,7 @@ public class Main {
                     break;
 
                 default:
-                    System.out.println("Opció no vàlida, intenta de nou.");
+                    System.out.println("Numero introducido no valido");
             }
         }
 
