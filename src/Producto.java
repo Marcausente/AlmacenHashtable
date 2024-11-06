@@ -1,6 +1,4 @@
 public class Producto {
-
-    //test
     String nombre;
     int precio;
     int cantidad;
@@ -23,6 +21,6 @@ public class Producto {
     }
 
     public String toString() {
-        return "Producto: " + nombre + ", precio: ";
+        return "Producto: " + nombre + ", precio: " + precio + "€, Cantidad del Stock: " + cantidad;
     }
 }
